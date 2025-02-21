@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <!-- Responsive meta tag -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mansi - A Journey of Love</title>
   <!-- Animate.css for smooth animations -->
@@ -14,13 +15,15 @@
       --primary-color: #ff6f91;
       --secondary-color: #ff9671;
       --accent-color: #ffc75f;
-      --background-gradient: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      --bg-gradient: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      --glass-bg: rgba(255, 255, 255, 0.4);
       --white-overlay: rgba(255, 255, 255, 0.95);
+      --box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Montserrat', sans-serif;
-      background: var(--background-gradient);
+      background: var(--bg-gradient);
       color: #333;
       overflow-x: hidden;
       scroll-behavior: smooth;
@@ -50,7 +53,7 @@
     /* Preloader */
     #preloader {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: var(--background-gradient);
+      background: var(--bg-gradient);
       display: flex; justify-content: center; align-items: center;
       z-index: 9999;
     }
@@ -64,11 +67,12 @@
     @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     /* Navigation */
     nav {
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.85);
       padding: 15px 30px;
       display: flex; justify-content: space-between; align-items: center;
       position: fixed; width: 100%; top: 0; z-index: 100;
       box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      backdrop-filter: blur(10px);
     }
     nav .logo {
       font-family: 'Great Vibes', cursive;
@@ -84,13 +88,22 @@
       transition: color 0.3s;
     }
     nav ul li a:hover { color: var(--primary-color); }
-    /* Sections */
+    /* Sections with Glassmorphism effect */
     section {
-      padding: 120px 20px 60px;
+      padding: 140px 20px 80px;
       min-height: 100vh;
       display: flex; flex-direction: column;
       align-items: center;
       text-align: center;
+    }
+    .glass-section {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: var(--box-shadow);
+      max-width: 900px;
+      margin: 40px auto;
     }
     #home h1 {
       font-family: 'Great Vibes', cursive;
@@ -107,14 +120,7 @@
     }
     /* Love Letter Section */
     #loveLetter {
-      background: var(--white-overlay);
       padding: 60px;
-      border-radius: 20px;
-      max-width: 900px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-      margin: 40px auto;
-      position: relative;
-      overflow: hidden;
     }
     #loveLetter h2 {
       font-family: 'Great Vibes', cursive;
@@ -147,14 +153,6 @@
       transform: scale(1.05);
     }
     /* Thoughts Section */
-    #thoughts {
-      background: var(--white-overlay);
-      padding: 60px;
-      border-radius: 20px;
-      max-width: 900px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-      margin: 40px auto;
-    }
     #thoughts h2 {
       font-size: 44px;
       margin-bottom: 20px;
@@ -196,7 +194,7 @@
       text-align: left;
       font-size: 20px;
     }
-    /* Developer's Thoughts Modal */
+    /* Modal for Developer's Thoughts */
     .modal {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -282,7 +280,27 @@
       pointer-events: none;
     }
     @keyframes ripple-effect { to { transform: scale(4); opacity: 0; } }
-    /* Responsive */
+    /* Scroll-to-top Button */
+    #scrollTop {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.3s;
+      display: none;
+      z-index: 100;
+    }
+    #scrollTop:hover {
+      background: var(--secondary-color);
+      transform: scale(1.1);
+    }
+    /* Responsive Adjustments */
     @media (max-width: 768px) {
       nav .logo { font-size: 32px; }
       nav ul li { margin: 0 10px; }
@@ -302,7 +320,7 @@
     <div class="spinner"></div>
   </div>
   
-  <!-- Background Music -->
+  <!-- Background Music (leave auto-play issue as is) -->
   <audio id="bgMusic" autoplay loop>
     <source src="silhouette-262943.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
@@ -320,17 +338,20 @@
   
   <!-- Home Section -->
   <section id="home" class="animate__animated animate__fadeInUp">
-    <h1>Welcome to Our Love Journey</h1>
-    <p>
-      Zindagi ke ride mein, jaise do trains side by side chalti hain, waise hi hamare journeys ka ek junction aa gaya.
-      Har baat cheet mein, pyaar ne quietly mere dil mein jagah banayi.
-    </p>
+    <div class="glass-section">
+      <h1>Welcome to Our Love Journey</h1>
+      <p>
+        Zindagi ke ride mein, jaise do trains side by side chalti hain, waise hi hamare journeys ka ek junction aa gaya.
+        Har baat cheet mein, pyaar ne quietly mere dil mein jagah banayi.
+      </p>
+    </div>
   </section>
   
   <!-- Love Letter Section -->
   <section id="loveLetter" class="animate__animated animate__fadeInUp">
-    <h2>Meri Dil Se Love Letter</h2>
-    <p>
+    <div class="glass-section">
+      <h2>Meri Dil Se Love Letter</h2>
+      <p>
 Mansi, tera naam hai mere conversations ka secret spice. Teri hassi, meri mind ke corridors mein goonjti hai, aur teri eyes ki twinkle meri dreams ko light kar deti hai.
 The sun rises with the warmth of our banter, and even in the calmness of the night, teri yaadon ka magic chalu rehta hai.
 
@@ -339,18 +360,21 @@ Teri cute aur playful antics have become my treasure of sweet memories. Ab, mera
 So, Mansi, is journey mein, jo hum dono saath likh rahe hain, kuch aur chapters add karna hai? Kya tu bhi, is exciting kahani mein mere saath ka part banna chahegi?
 
 And just so you know, Mansi, mai itzaar karunga tere jawab ka. Can't wait to read the next page of our story.
-    </p>
-    <a href="full-letter.html" target="_blank" class="read-more-btn ripple-btn">Read Full Love Letter</a>
+      </p>
+      <a href="full-letter.html" target="_blank" class="read-more-btn ripple-btn">Read Full Love Letter</a>
+    </div>
   </section>
   
   <!-- Thoughts Section -->
   <section id="thoughts" class="animate__animated animate__fadeInUp">
-    <h2>Apne Khayal Likho</h2>
-    <form id="thoughtForm">
-      <textarea id="thoughtInput" rows="4" placeholder="Yahan likho..."></textarea>
-      <button type="submit" class="ripple-btn">Post Kar</button>
-    </form>
-    <div class="thought-list" id="thoughtList"></div>
+    <div class="glass-section">
+      <h2>Apne Khayal Likho</h2>
+      <form id="thoughtForm">
+        <textarea id="thoughtInput" rows="4" placeholder="Yahan likho..."></textarea>
+        <button type="submit" class="ripple-btn">Post Kar</button>
+      </form>
+      <div class="thought-list" id="thoughtList"></div>
+    </div>
   </section>
   
   <!-- Floating Button for Developer's Thoughts -->
@@ -373,6 +397,9 @@ And just so you know, Mansi, mai itzaar karunga tere jawab ka. Can't wait to rea
   <!-- Music Toggle Button -->
   <button class="music-toggle ripple-btn" id="musicToggle">Pause Music</button>
   
+  <!-- Scroll-to-top Button -->
+  <button id="scrollTop" class="ripple-btn">Top</button>
+  
   <script>
     // Remove preloader on window load and generate hearts
     window.addEventListener('load', () => {
@@ -380,10 +407,10 @@ And just so you know, Mansi, mai itzaar karunga tere jawab ka. Can't wait to rea
       preloader.classList.add('animate__animated', 'animate__fadeOut');
       setTimeout(() => { preloader.style.display = 'none'; }, 1000);
       
-      // Set music volume and attempt play
+      // Attempt to auto-play music (subject to browser policies)
       const bgMusic = document.getElementById('bgMusic');
       bgMusic.volume = 0.2;
-      bgMusic.play().catch(e => console.error(e));
+      bgMusic.play().catch(e => console.error("Auto-play was blocked:", e));
       
       // Generate floating hearts
       generateHearts(30);
@@ -457,6 +484,19 @@ And just so you know, Mansi, mai itzaar karunga tere jawab ka. Can't wait to rea
     modalClose.addEventListener('click', () => { devThoughtModal.classList.remove('active'); });
     window.addEventListener('click', (e) => { if(e.target === devThoughtModal) { devThoughtModal.classList.remove('active'); } });
     
+    // Scroll-to-top functionality
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 300) {
+        scrollTopBtn.style.display = 'block';
+      } else {
+        scrollTopBtn.style.display = 'none';
+      }
+    });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
     // Function to generate floating hearts
     function generateHearts(count) {
       const container = document.getElementById('floatingHearts');
@@ -464,7 +504,6 @@ And just so you know, Mansi, mai itzaar karunga tere jawab ka. Can't wait to rea
         const heart = document.createElement('div');
         heart.classList.add('heart');
         heart.innerHTML = '❤️';
-        // Randomize starting position and animation duration
         heart.style.left = Math.random() * 100 + 'vw';
         heart.style.animationDuration = (4 + Math.random() * 4) + 's';
         heart.style.fontSize = (20 + Math.random() * 20) + 'px';
