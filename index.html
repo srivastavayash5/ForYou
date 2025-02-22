@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Responsive meta tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mansi - A Journey of Love</title>
+  <!-- Animate.css for smooth animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Floating Hearts Container -->
+  <div class="floating-hearts" id="floatingHearts"></div>
+  
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+  
+  <!-- Background Music -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="silhouette-262943.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <!-- Navigation -->
+  <nav class="animate__animated animate__fadeInDown">
+    <div class="logo">Mansi</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#loveLetter">Love Letter</a></li>
+      <li><a href="#thoughts">Thoughts</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Home Section -->
+  <section id="home" class="animate__animated animate__fadeInUp">
+    <div class="glass-section">
+      <h1>Welcome to Our Love Journey</h1>
+      <p>
+        Pehli baar train mein tumse mila tha, tabhi samajh aaya ki kismet mein kuch khaas likha hai.<br>
+        Tum ho mere dil ke raaz, aur har baat mein tumhari yaad bas jati hai.
+      </p>
+    </div>
+  </section>
+  
+  <!-- Love Letter Section -->
+  <section id="loveLetter" class="animate__animated animate__fadeInUp">
+    <div class="glass-section">
+      <h2>Meri Dil Se Love Letter</h2>
+      <p>
+        Mansi, tera naam hai mere conversations ka secret spice. Teri hassi, meri mind ke corridors mein goonjti hai, aur teri eyes ki twinkle meri dreams ko light kar deti hai.
+      </p>
+      <a href="love-letter.html" target="_blank" class="read-more-btn ripple-btn">Read Full Love Letter</a>
+    </div>
+  </section>
+  
+<!-- Thoughts Section -->
+<section id="thoughts" class="animate__animated animate__fadeInUp">
+  <div class="glass-section">
+    <h2>Apne Khayal Likho</h2>
+    <form id="thoughtForm">
+      <textarea id="thoughtInput" rows="2" placeholder="Yahan likho..."></textarea>
+      <button type="submit" class="ripple-btn">Post Kar</button>
+    </form>
+    <!-- Chat-like container for thoughts -->
+    <div class="thought-list" id="thoughtList"></div>
+  </div>
+</section>
+
+  <!-- Floating Button for Developer's Thoughts -->
+  <button class="floating-btn ripple-btn" id="devThoughtBtn">Meri Soch</button>
+  
+<!-- Modal for Developer's Thoughts -->
+<div class="modal" id="devThoughtModal">
+  <div class="modal-content" style="color: black;">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <h2 class="animate__animated animate__fadeInDown">Meri Soch</h2>
+    <p class="animate__animated animate__fadeInUp">
+      Is website ke through, main apni soch, apne jazbaat, aur un lamhon ko tumse baatne ki koshish kar raha hoon.<br>
+      Har pal main yahi sochta hoon ki tumhari muskurahat mere liye kitni keemti hai.<br>
+      Tumhari yaad mere dil mein hamesha ek nayi roshni jagati hai, jo mere har din ko suhana bana deti hai.
+    </p>
+  </div>
+</div>
+
+  <!-- Music Toggle Button -->
+  <button class="music-toggle ripple-btn" id="musicToggle">Pause Music</button>
+  
+  <!-- Scroll-to-top Button -->
+  <button id="scrollTop" class="ripple-btn">Top</button>
+  
+  <!-- Custom Script -->
+  <script src="script.js"></script>
+</body>
+</html>
