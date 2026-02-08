@@ -1,395 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap');
-
-/* Root Variables for Color Scheme */
-:root {
-  --primary-color: #2196F3;       /* Blue */
-  --secondary-color: #212121;     /* Black (dark tone) */
-  --accent-color: #FFC107;        /* Accent reminiscent of strawberries/pineapples */
-  --bg-gradient: linear-gradient(135deg, #000000, #212121); /* Dark background */
-  --glass-bg: rgba(255, 255, 255, 0.2);
-  --white-overlay: rgba(255, 255, 255, 0.95);
-  --box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/** Enhanced Styling */
 body {
-  font-family: 'Montserrat', sans-serif;
-  background: var(--bg-gradient);
-  color: #eee;
-  text-align: center;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  position: relative;
+    font-family: 'Arial', sans-serif;
+    background: rgba(240, 240, 240, 0.9);
 }
 
-/* Floating Hearts Background */
-.floating-hearts {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -2;
-}
-.floating-hearts .heart {
-  position: absolute;
-  color: var(--primary-color);
-  font-size: 24px;
-  opacity: 0;
-  animation: floatHeart linear infinite;
-}
-@keyframes floatHeart {
-  0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
-  25% { opacity: 1; }
-  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+/* Gallery Section */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-/* Preloader */
-#preloader {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--bg-gradient);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-.spinner {
-  border: 8px solid rgba(255,255,255,0.3);
-  border-top: 8px solid var(--primary-color);
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: spin 1s linear infinite;
-}
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+gallery img {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
-/* Navigation */
-nav {
-  background: rgba(0, 0, 0, 0.85);
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-  backdrop-filter: blur(10px);
-}
-nav .logo {
-  font-family: 'Great Vibes', cursive;
-  font-size: 40px;
-  color: var(--primary-color);
-}
-nav ul {
-  list-style: none;
-  display: flex;
-}
-nav ul li {
-  margin: 0 20px;
-}
-nav ul li a {
-  text-decoration: none;
-  color: #eee;
-  font-size: 18px;
-  transition: color 0.3s;
-}
-nav ul li a:hover {
-  color: var(--primary-color);
+gallery img:hover {
+    transform: scale(1.05);
 }
 
-/* Sections with Glassmorphism */
-section {
-  padding: 140px 20px 80px;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-.glass-section {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: var(--box-shadow);
-  max-width: 900px;
-  margin: 40px auto;
-}
-#home h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 64px;
-  color: var(--primary-color);
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-#home p {
-  font-size: 24px;
-  max-width: 700px;
-  line-height: 1.6;
-  margin-bottom: 40px;
+/* Timeline Section */
+.timeline {
+    position: relative;
+    margin: 20px 0;
 }
 
-/* Love Letter Section */
-#loveLetter h2 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 56px;
-  color: var(--secondary-color);
-  margin-bottom: 30px;
-}
-#loveLetter p {
-  font-size: 24px;
-  line-height: 1.8;
-  white-space: pre-line;
-  margin-bottom: 30px;
-}
-.read-more-btn {
-  display: inline-block;
-  padding: 15px 35px;
-  font-size: 20px;
-  color: #fff;
-  background: var(--primary-color);
-  border: none;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: background 0.3s, transform 0.3s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  position: relative;
-  overflow: hidden;
-}
-.read-more-btn:hover {
-  background: var(--accent-color);
-  transform: scale(1.05);
+timeline-event {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Thoughts Section */
-#thoughts h2 {
-  font-size: 44px;
-  margin-bottom: 20px;
-  color: var(--primary-color);
-}
-#thoughts form {
-  display: flex;
-  flex-direction: column;
-}
-#thoughts textarea {
-  padding: 20px;
-  font-size: 20px;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  resize: none;
-}
-#thoughts button {
-  padding: 15px;
-  font-size: 20px;
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  position: relative;
-  overflow: hidden;
-}
-#thoughts button:hover {
-  background: var(--accent-color);
-  transform: scale(1.05);
-}
-#thoughts .thought-list {
-  max-height: 300px;
-  overflow-y: auto;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  margin-top: 20px;
-  text-align: left;
+/* Messages Section */
+.messages {
+    max-width: 600px;
+    margin: auto;
 }
 
-.thought-item {
-  background: rgba(33, 150, 243, 0.85); 
-  padding: 10px 15px;
-  border-radius: 15px;
-  margin-bottom: 10px;
-  color: white;
-  max-width: 80%;
-  word-wrap: break-word;
+.messages div {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px 0;
 }
 
-#thoughts textarea {
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  padding: 10px 15px;
-  font-size: 1em;
-  resize: none;
+/* Glassmorphism Effect */
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Letter Container (Love Letter Page) */
-.letter-container {
-  padding: 50px;
-  max-width: 600px;
-  margin: 100px auto;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  box-shadow: var(--box-shadow);
-}
-.signature {
-  font-style: italic;
-  font-size: 1.4em;
-  margin-top: 20px;
-}
-
-/* Modal for Developer's Thoughts */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease;
-  z-index: 200;
-}
-.modal.active {
-  opacity: 1;
-  visibility: visible;
-}
-.modal-content {
-  background: var(--white-overlay);
-  padding: 40px;
-  border-radius: 20px;
-  max-width: 700px;
-  text-align: center;
-  position: relative;
-  animation: modalZoom 0.5s ease;
-}
-@keyframes modalZoom {
-  from { transform: scale(0.7); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-.modal-close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: var(--primary-color);
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-/* Floating Button for Developer's Thoughts */
-.floating-btn {
-  position: fixed;
-  bottom: 30px;
-  left: 30px;
-  background: var(--accent-color);
-  color: #fff;
-  border: none;
-  padding: 15px 25px;
-  border-radius: 50px;
-  cursor: pointer;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-  transition: background 0.3s, transform 0.3s;
-  z-index: 150;
-}
-.floating-btn:hover {
-  background: var(--primary-color);
-  transform: scale(1.1);
-}
-
-/* Music Toggle Button */
-.music-toggle {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: var(--primary-color);
-  color: #fff;
-  border: none;
-  padding: 15px 25px;
-  border-radius: 50px;
-  cursor: pointer;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-  transition: background 0.3s, transform 0.3s;
-  z-index: 100;
-}
-.music-toggle:hover {
-  background: var(--accent-color);
-  transform: scale(1.1);
-}
-
-/* Scroll-to-top Button */
-#scrollTop {
-  position: fixed;
-  bottom: 100px;
-  right: 30px;
-  background: var(--primary-color);
-  color: #fff;
-  border: none;
-  padding: 12px 18px;
-  border-radius: 50px;
-  cursor: pointer;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-  transition: background 0.3s, transform 0.3s;
-  display: none;
-  z-index: 100;
-}
-#scrollTop:hover {
-  background: var(--accent-color);
-  transform: scale(1.1);
-}
-
-/* Ripple Effect for Buttons */
-.ripple {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.7);
-  transform: scale(0);
-  animation: ripple-effect 600ms linear;
-  pointer-events: none;
-}
-@keyframes ripple-effect {
-  to { transform: scale(4); opacity: 0; }
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.fade-in {
-  animation: fadeIn 2s ease-in-out;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  nav .logo { font-size: 32px; }
-  nav ul li { margin: 0 10px; }
-  #home h1 { font-size: 52px; }
-  #home p, #loveLetter p, #thoughts textarea { font-size: 20px; }
-  #loveLetter h2 { font-size: 48px; }
-  #thoughts h2 { font-size: 36px; }
+/* Improved Responsiveness */
+@media (max-width: 600px) {
+    .gallery {
+        flex-direction: column;
+    }
 }
