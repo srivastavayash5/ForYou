@@ -53,40 +53,33 @@
       <a href="#loveLetter" class="cta-btn ripple-btn">Start Reading Our Story ✨</a>
     </div>
   </section>
-
   <!-- Gallery Section -->
   <section id="gallery" class="gallery-section animate__animated animate__fadeInUp">
     <div class="glass-section">
       <h2>📸 Moments We Cherish</h2>
       <div class="gallery-grid">
-        <div class="gallery-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <div class="gallery-item" data-title="First Meeting">
+          <img src="gallery-1.jpg" alt="First Meeting">
           <div class="gallery-overlay">
             <p>First Meeting</p>
           </div>
         </div>
-        <div class="gallery-item" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+        <div class="gallery-item" data-title="Endless Conversations">
+          <img src="gallery-2.jpg" alt="Endless Conversations">
           <div class="gallery-overlay">
             <p>Endless Conversations</p>
           </div>
         </div>
-        <div class="gallery-item" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+        <div class="gallery-item" data-title="Your Smile">
+          <img src="gallery-3.jpg" alt="Your Smile">
           <div class="gallery-overlay">
             <p>Your Smile</p>
           </div>
         </div>
-        <div class="gallery-item" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+        <div class="gallery-item" data-title="Sweet Moments">
+          <img src="gallery-4.jpg" alt="Sweet Moments">
           <div class="gallery-overlay">
             <p>Sweet Moments</p>
-          </div>
-        </div>
-        <div class="gallery-item" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-          <div class="gallery-overlay">
-            <p>Laughter & Joy</p>
-          </div>
-        </div>
-        <div class="gallery-item" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
-          <div class="gallery-overlay">
-            <p>Forever Moments</p>
           </div>
         </div>
       </div>
@@ -123,7 +116,7 @@
           <div class="timeline-date">Forever</div>
           <div class="timeline-content">
             <h3>This Website</h3>
-            <p>Apne sab khayal likhe hain is website mein, tum padhni...</p>
+            <p>Apne sab khayal likhe hain is website mein, tum padhna...</p>
           </div>
         </div>
       </div>
@@ -202,6 +195,13 @@
         <strong>Tum mere sath hamesha raogi na?</strong>
       </p>
     </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <img id="lightboxImage" alt="Gallery image">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
   </div>
 
   <!-- Controls -->
