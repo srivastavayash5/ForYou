@@ -2,26 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Responsive meta tag -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mansi - A Journey of Love</title>
-  <!-- Animate.css for smooth animations -->
+  <title>Mansi - A Journey of Love 💕</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-  <!-- Custom Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Floating Hearts Container -->
   <div class="floating-hearts" id="floatingHearts"></div>
   
-  <!-- Preloader -->
   <div id="preloader">
     <div class="spinner"></div>
+    <p class="preloader-text">Loading Our Story...</p>
   </div>
   
-  <!-- Background Music -->
   <audio id="bgMusic" autoplay loop>
     <source src="silhouette-262943.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
@@ -29,72 +24,201 @@
   
   <!-- Navigation -->
   <nav class="animate__animated animate__fadeInDown">
-    <div class="logo">Mansi</div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#loveLetter">Love Letter</a></li>
-      <li><a href="#thoughts">Thoughts</a></li>
-    </ul>
+    <div class="nav-container">
+      <div class="logo">💕 Mansi</div>
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#timeline" class="nav-link">Timeline</a></li>
+        <li><a href="#loveLetter" class="nav-link">Letter</a></li>
+        <li><a href="#messages" class="nav-link">Messages</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
   </nav>
   
   <!-- Home Section -->
-  <section id="home" class="animate__animated animate__fadeInUp">
-    <div class="glass-section">
-      <h1>Welcome to Our Love Journey</h1>
-      <p>
+  <section id="home" class="hero-section animate__animated animate__fadeInUp">
+    <div class="stars"></div>
+    <div class="glass-section hero-content">
+      <h1 class="hero-title">Welcome to Our Love Journey</h1>
+      <p class="hero-subtitle">
         Pehli baar train mein tumse mila tha, tabhi samajh aaya ki kismet mein kuch khaas likha hai.<br>
-        Tum ho mere dil ke raaz, aur har baat mein tumhari yaad bas jati hai.
+        <span class="gradient-text">Tum ho mere dil ke raaz</span>, aur har baat mein tumhari yaad bas jati hai.
       </p>
+      <a href="#loveLetter" class="cta-btn ripple-btn">Start Reading Our Story ✨</a>
     </div>
   </section>
-  
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="gallery-section animate__animated animate__fadeInUp">
+    <div class="glass-section">
+      <h2>📸 Moments We Cherish</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+          <div class="gallery-overlay">
+            <p>First Meeting</p>
+          </div>
+        </div>
+        <div class="gallery-item" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+          <div class="gallery-overlay">
+            <p>Endless Conversations</p>
+          </div>
+        </div>
+        <div class="gallery-item" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+          <div class="gallery-overlay">
+            <p>Your Smile</p>
+          </div>
+        </div>
+        <div class="gallery-item" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+          <div class="gallery-overlay">
+            <p>Sweet Moments</p>
+          </div>
+        </div>
+        <div class="gallery-item" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+          <div class="gallery-overlay">
+            <p>Laughter & Joy</p>
+          </div>
+        </div>
+        <div class="gallery-item" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+          <div class="gallery-overlay">
+            <p>Forever Moments</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section id="timeline" class="timeline-section animate__animated animate__fadeInUp">
+    <div class="glass-section">
+      <h2>💫 Our Timeline</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">First Meeting</div>
+          <div class="timeline-content">
+            <h3>Train mein Mila</h3>
+            <p>Pehli baar train mein tumse mila - jo lamha tha wo kabhi bhool nahin sakte!</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">First Talk</div>
+          <div class="timeline-content">
+            <h3>Endless Conversations</h3>
+            <p>Tumse baat karna mere liye sabse khubsurat waqt ban gaya...</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Growing Close</div>
+          <div class="timeline-content">
+            <h3>Meri Soch Badal Gayi</h3>
+            <p>Tum mere har ek khayal mein aa gaye ho, har beat mein tumhara naam...</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Forever</div>
+          <div class="timeline-content">
+            <h3>This Website</h3>
+            <p>Apne sab khayal likhe hain is website mein, tum padhni...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Love Letter Section -->
   <section id="loveLetter" class="animate__animated animate__fadeInUp">
     <div class="glass-section">
-      <h2>Meri Dil Se Love Letter</h2>
+      <h2>💌 Meri Dil Se Love Letter</h2>
       <p>
         Mansi, tera naam hai mere conversations ka secret spice. Teri hassi, meri mind ke corridors mein goonjti hai, aur teri eyes ki twinkle meri dreams ko light kar deti hai.
       </p>
-      <a href="love-letter.html" target="_blank" class="read-more-btn ripple-btn">Read Full Love Letter</a>
+      <a href="love-letter.html" target="_blank" class="read-more-btn ripple-btn">
+        <i class="fas fa-heart"></i> Read Full Love Letter
+      </a>
     </div>
   </section>
-  
-<!-- Thoughts Section -->
-<section id="thoughts" class="animate__animated animate__fadeInUp">
-  <div class="glass-section">
-    <h2>Apne Khayal Likho</h2>
-    <form id="thoughtForm">
-      <textarea id="thoughtInput" rows="2" placeholder="Yahan likho..."></textarea>
-      <button type="submit" class="ripple-btn">Post Kar</button>
-    </form>
-    <!-- Chat-like container for thoughts -->
-    <div class="thought-list" id="thoughtList"></div>
-  </div>
-</section>
 
-  <!-- Floating Button for Developer's Thoughts -->
-  <button class="floating-btn ripple-btn" id="devThoughtBtn">Meri Soch</button>
-  
-<!-- Modal for Developer's Thoughts -->
-<div class="modal" id="devThoughtModal">
-  <div class="modal-content" style="color: black;">
-    <button class="modal-close" id="modalClose">&times;</button>
-    <h2 class="animate__animated animate__fadeInDown">Meri Soch</h2>
-    <p class="animate__animated animate__fadeInUp">
-      Is website ke through, main apni soch, apne jazbaat, aur un lamhon ko tumse baatne ki koshish kar raha hoon.<br>
-      Har pal main yahi sochta hoon ki tumhari muskurahat mere liye kitni keemti hai.<br>
-      Tumhari yaad mere dil mein hamesha ek nayi roshni jagati hai, jo mere har din ko suhana bana deti hai.
-    </p>
-  </div>
-</div>
+  <!-- Messages Section -->
+  <section id="messages" class="animate__animated animate__fadeInUp">
+    <div class="glass-section">
+      <h2>💭 Special Messages</h2>
+      <div class="messages-container">
+        <div class="message-card">
+          <div class="message-icon">🎵</div>
+          <h3>Music</h3>
+          <p>"Har ek song tumhare bare mein gata hai..."</p>
+        </div>
+        <div class="message-card">
+          <div class="message-icon">🌙</div>
+          <h3>Night Thoughts</h3>
+          <p>"Raat ko neend mein bhi tumhe dhundhta hoon..."</p>
+        </div>
+        <div class="message-card">
+          <div class="message-icon">☀️</div>
+          <h3>Morning Vibes</h3>
+          <p>"Subah tum se milne ki baateein soochta hoon..."</p>
+        </div>
+        <div class="message-card">
+          <div class="message-icon">💫</div>
+          <h3>Forever</h3>
+          <p>"Tum mere sath hamesha raogi na? Hamesha ke liye..."</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Music Toggle Button -->
-  <button class="music-toggle ripple-btn" id="musicToggle">Pause Music</button>
+  <!-- Thoughts Section -->
+  <section id="thoughts" class="animate__animated animate__fadeInUp">
+    <div class="glass-section">
+      <h2>💬 Apne Khayal Likho</h2>
+      <form id="thoughtForm">
+        <textarea id="thoughtInput" rows="3" placeholder="Yahan likho aur dil se baat kar..."></textarea>
+        <button type="submit" class="ripple-btn btn-submit">
+          <i class="fas fa-paper-plane"></i> Post Kar
+        </button>
+      </form>
+      <div class="thought-list" id="thoughtList"></div>
+    </div>
+  </section>
+
+  <!-- Floating Buttons -->
+  <button class="floating-btn ripple-btn" id="devThoughtBtn" title="Meri Soch">
+    <i class="fas fa-lightbulb"></i>
+  </button>
   
-  <!-- Scroll-to-top Button -->
-  <button id="scrollTop" class="ripple-btn">Top</button>
+  <!-- Modal -->
+  <div class="modal" id="devThoughtModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <h2 class="animate__animated animate__fadeInDown">💭 Meri Soch</h2>
+      <p class="animate__animated animate__fadeInUp">
+        Is website ke through, main apni soch, apne jazbaat, aur un lamhon ko tumse baatne ki koshish kar raha hoon.<br><br>
+        Har pal main yahi sochta hoon ki tumhari muskurahat mere liye kitni keemti hai. Tumhari yaad mere dil mein hamesha ek nayi roshni jagati hai, jo mere har din ko suhana bana deti hai.<br><br>
+        <strong>Tum mere sath hamesha raogi na?</strong>
+      </p>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <button class="music-toggle ripple-btn" id="musicToggle" title="Toggle Music">
+    <i class="fas fa-music"></i>
+  </button>
   
-  <!-- Custom Script -->
+  <button id="scrollTop" class="ripple-btn scroll-top-btn" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Made with <i class="fas fa-heart" style="color: #FF1744;"></i> for Someone Special 💕</p>
+    <p class="footer-year">2026 © A Love Story</p>
+  </footer>
+  
   <script src="script.js"></script>
 </body>
 </html>
