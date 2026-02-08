@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Remove preloader on window load and generate floating hearts
   const preloader = document.getElementById("preloader");
-  preloader.classList.add("animate__animated", "animate__fadeOut");
-  setTimeout(() => { preloader.style.display = "none"; }, 1000);
+  window.addEventListener("load", () => {
+    preloader.classList.add("animate__animated", "animate__fadeOut");
+    setTimeout(() => { preloader.style.display = "none"; }, 1000);
+  });
 
   // Attempt to auto-play music (subject to browser policies)
   const bgMusic = document.getElementById("bgMusic");
@@ -34,15 +36,18 @@ document.addEventListener("DOMContentLoaded", function () {
   musicToggle.addEventListener("click", () => {
     if(isPlaying) {
       bgMusic.pause();
-      musicToggle.textContent = "Play Music";
+      musicToggle.innerHTML = '<i class="fas fa-play"></i>';
+      musicToggle.title = "Play Music";
       isPlaying = false;
     } else {
       bgMusic.play().then(() => {
-        musicToggle.textContent = "Pause Music";
+        musicToggle.innerHTML = '<i class="fas fa-music"></i>';
+        musicToggle.title = "Pause Music";
         isPlaying = true;
       }).catch(e => console.error(e));
     }
   });
+  musicToggle.innerHTML = '<i class="fas fa-music"></i>';
 
   // Thoughts posting functionality with localStorage persistence
   const thoughtForm = document.getElementById("thoughtForm");
@@ -71,6 +76,53 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   loadThoughts();
 
+  // Mobile navigation toggle
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    hamburger.classList.toggle("active");
+  });
+  document.querySelectorAll(".nav-link").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      hamburger.classList.remove("active");
+    });
+  });
+
+  // Gallery lightbox
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const lightboxCaption = document.getElementById("lightboxCaption");
+  const lightboxClose = document.getElementById("lightboxClose");
+  if (lightbox && lightboxImage && lightboxCaption) {
+    document.querySelectorAll(".gallery-item").forEach(item => {
+      item.addEventListener("click", () => {
+        const img = item.querySelector("img");
+        if (!img) { return; }
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt || "Gallery image";
+        lightboxCaption.textContent = item.dataset.title || img.alt || "";
+        lightbox.classList.add("active");
+      });
+    });
+    if (lightboxClose) {
+      lightboxClose.addEventListener("click", () => {
+        lightbox.classList.remove("active");
+      });
+    }
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove("active");
+      }
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        lightbox.classList.remove("active");
+      }
+    });
+  }
+
   // Modal for Developer's Thoughts
   const devThoughtBtn = document.getElementById("devThoughtBtn");
   const devThoughtModal = document.getElementById("devThoughtModal");
@@ -98,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let i = 0; i < count; i++) {
       const heart = document.createElement("div");
       heart.classList.add("heart");
-      heart.innerHTML = "❤️";
+      heart.innerHTML = "\u2764\uFE0F";
       heart.style.left = Math.random() * 100 + "vw";
       heart.style.animationDuration = (4 + Math.random() * 4) + "s";
       heart.style.fontSize = (20 + Math.random() * 20) + "px";
@@ -106,3 +158,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
